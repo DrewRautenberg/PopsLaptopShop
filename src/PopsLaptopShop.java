@@ -19,7 +19,7 @@ public class PopsLaptopShop {
 
             //user information
             String name;
-            int baseSalary;
+            double baseSalary;
             String startingTier;
             int numBasic;
             int numPremium;

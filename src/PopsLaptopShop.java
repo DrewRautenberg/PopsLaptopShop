@@ -17,7 +17,7 @@ public class PopsLaptopShop {
             //commission amounts
             int basicComm = 50;
             int premiumComm = 100;
-            int deluxComm = 150;
+            int deluxeComm = 150;
             final int SUPER_BONUS = 1000;
 
             //user information
@@ -38,6 +38,9 @@ public class PopsLaptopShop {
 
             //Calculations
             double salesTotal = (numBasic * basic) + (numPremium * premium) + (namDeluxe * deluxe);
+
+            //Calculate commission amount
+            int commTotal = (numBasic * basicComm) + (numPremium * premiumComm) + (namDeluxe * deluxeComm);
 
             //Calculate Bonus Amount
 

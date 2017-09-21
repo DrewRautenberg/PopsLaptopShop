@@ -28,6 +28,11 @@ public class PopsLaptopShop {
             int numPremium = 0;
             int namDeluxe = 0;
 
+            //calculation variables
+            double salesTotal;
+            int commTotal;
+            double bonusAmnt;
+
             //user input
             name = JOptionPane.showInputDialog("Name");
             baseSalary = Integer.parseInt(JOptionPane.showInputDialog("Base salary"));
@@ -37,12 +42,27 @@ public class PopsLaptopShop {
             namDeluxe = Integer.parseInt(JOptionPane.showInputDialog("Number of deluxe laptops sold"));
 
             //Calculations
-            double salesTotal = (numBasic * basic) + (numPremium * premium) + (namDeluxe * deluxe);
+            salesTotal = (numBasic * basic) + (numPremium * premium) + (namDeluxe * deluxe);
 
             //Calculate commission amount
-            int commTotal = (numBasic * basicComm) + (numPremium * premiumComm) + (namDeluxe * deluxeComm);
+            commTotal = (numBasic * basicComm) + (numPremium * premiumComm) + (namDeluxe * deluxeComm);
 
             //Calculate Bonus Amount
+            if ((salesTotal >= 0) && (salesTotal <2500)){
+                bonusAmnt = 0;
+            }
+            else if ((salesTotal >= 2500) && (salesTotal <5500)){
+                bonusAmnt = salesTotal *0.01;
+            }
+            else if ((salesTotal >= 5500) && (salesTotal <10500)){
+                bonusAmnt = 75 + (0.02 * (salesTotal - 5500));
+            }
+            else if ((salesTotal >= 10500) && (salesTotal <13500)){
+                bonusAmnt = 125 + (0.03 * (salesTotal - 10500));
+            }
+            else {
+                bonusAmnt = 375;
+            }
 
 
         }

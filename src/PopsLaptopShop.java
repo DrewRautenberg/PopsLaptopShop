@@ -1,11 +1,8 @@
-import jdk.nashorn.internal.scripts.JO;
-
-import javax.swing.*;
-
-/* A2 Pops Laptop Shop
+    /* A2 Pops Laptop Shop
     * AUTHOR:  Drew Rautenberg
     * Description:
     */
+import javax.swing.*;
 public class PopsLaptopShop {
         public static void main(String[] args) {
             //Variable Declaration
@@ -24,14 +21,14 @@ public class PopsLaptopShop {
             String name;
             int baseSalary;
             String tier;
-            int numBasic = 0;
-            int numPremium = 0;
-            int namDeluxe = 0;
+            int numBasic;
+            int numPremium;
+            int namDeluxe;
 
             //calculation variables
             double salesTotal;
             int commTotal;
-            double bonusAmnt;
+            double bonusAmt;
 
             //user input
             name = JOptionPane.showInputDialog("Name");
@@ -49,24 +46,23 @@ public class PopsLaptopShop {
 
             //Calculate Bonus Amount
             if ((salesTotal >= 0) && (salesTotal <2500)){
-                bonusAmnt = 0;
+                bonusAmt = 0;
             }
             else if ((salesTotal >= 2500) && (salesTotal <5500)){
-                bonusAmnt = salesTotal *0.01;
+                bonusAmt = salesTotal *0.01;
             }
             else if ((salesTotal >= 5500) && (salesTotal <10500)){
-                bonusAmnt = 75 + (0.02 * (salesTotal - 5500));
+                bonusAmt = 75 + (0.02 * (salesTotal - 5500));
             }
             else if ((salesTotal >= 10500) && (salesTotal <13500)){
-                bonusAmnt = 125 + (0.03 * (salesTotal - 10500));
+                bonusAmt = 125 + (0.03 * (salesTotal - 10500));
             }
             else {
-                bonusAmnt = 375;
+                bonusAmt = 375;
             }
+
+
 
 
         }
-
-
-
 }

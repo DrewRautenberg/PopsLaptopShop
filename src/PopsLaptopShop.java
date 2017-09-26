@@ -34,6 +34,7 @@ public class PopsLaptopShop {
             double superBonus = 0;
             String startingTierWord;
             double totCommBonus;
+            double totMonthPay;
 
             //user input
             name = JOptionPane.showInputDialog("Name");
@@ -110,6 +111,9 @@ public class PopsLaptopShop {
             //Calculate total commission and bonus
             totCommBonus = commTotal + bonusAmt + superBonus;
 
+            //Calculate total pay for the month
+            totMonthPay = baseSalary + totCommBonus;
+
             //Outputs
             System.out.println("Salesperson: " + name);
             System.out.println("Starting Tier: " + startingTierWord);
@@ -118,6 +122,7 @@ public class PopsLaptopShop {
             System.out.printf("Bonus: $%,.2f\n", bonusAmt);
             System.out.printf("Super Bonus: $%,.2f\n", superBonus);
             System.out.printf("Total Commission and Bonus: $%,.2f\n", totCommBonus);
+            System.out.printf("Total Monthly Pay: $%,.2f\n", totMonthPay);
             System.out.println("Final Tier: " + finalTier);
 
         }

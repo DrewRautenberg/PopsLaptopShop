@@ -33,6 +33,7 @@ public class PopsLaptopShop {
             double baseSalaryLimit;
             double superBonus = 0;
             String startingTierWord;
+            double totCommBonus;
 
             //user input
             name = JOptionPane.showInputDialog("Name");
@@ -81,8 +82,10 @@ public class PopsLaptopShop {
                 bonusAmt = 375;
             }
 
+            //Calculate 75% of base salary
             baseSalaryLimit = baseSalary *.75;
 
+            //Determine ending tier
             if (commTotal >= baseSalaryLimit){
                 switch (startingTier){
                     case "S":
@@ -104,12 +107,17 @@ public class PopsLaptopShop {
                 finalTier = startingTierWord;
             }
 
+            //Calculate total commission and bonus
+            totCommBonus = commTotal + bonusAmt + superBonus;
+
+            //Outputs
             System.out.println("Salesperson: " + name);
             System.out.println("Starting Tier: " + startingTierWord);
             System.out.printf("Base Salary: $%,.2f\n", baseSalary);
             System.out.printf("Commission: $%,.2f\n", commTotal);
             System.out.printf("Bonus: $%,.2f\n", bonusAmt);
             System.out.printf("Super Bonus: $%,.2f\n", superBonus);
+            System.out.printf("Total Commission and Bonus: $%,.2f\n", totCommBonus);
             System.out.println("Final Tier: " + finalTier);
 
         }

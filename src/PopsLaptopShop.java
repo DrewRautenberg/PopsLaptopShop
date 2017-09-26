@@ -53,6 +53,9 @@ public class PopsLaptopShop {
                 case "T":
                     startingTierWord = "Top";
                     break;
+                default:
+                    startingTierWord = "Starting";
+                    break;
             }
 
             //Calculations
@@ -92,6 +95,9 @@ public class PopsLaptopShop {
                         finalTier = "Top";
                         superBonus = SUPER_BONUS;
                         break;
+                    default:
+                        finalTier = startingTierWord;
+                        break;
                 }
             }
             else{
@@ -104,6 +110,7 @@ public class PopsLaptopShop {
             System.out.printf("Commission: $%,.2f\n", commTotal);
             System.out.printf("Bonus: $%,.2f\n", bonusAmt);
             System.out.printf("Super Bonus: $%,.2d\n", superBonus);
+            System.out.println("Final Tier:" + finalTier);
 
         }
 }

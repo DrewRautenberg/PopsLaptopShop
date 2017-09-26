@@ -6,6 +6,11 @@ import javax.swing.*;
 public class PopsLaptopShop {
         public static void main(String[] args){
             //Variable Declaration
+            //Static variables
+            final int SUPER_BONUS = 1000;
+            final int MAX_VALID_SALARY = 10000;
+            final int MAX_VALID_UNITS = 50;
+
             //laptop types
             double basic = 450.90;
             double premium = 850.50;
@@ -15,7 +20,6 @@ public class PopsLaptopShop {
             int basicComm = 50;
             int premiumComm = 100;
             int deluxeComm = 150;
-            final int SUPER_BONUS = 1000;
 
             //user information
             String name;
@@ -23,7 +27,7 @@ public class PopsLaptopShop {
             String startingTier;
             int numBasic;
             int numPremium;
-            int namDeluxe;
+            int numDeluxe;
 
             //calculation variables
             double salesTotal;
@@ -39,11 +43,19 @@ public class PopsLaptopShop {
 
             //user input
             name = JOptionPane.showInputDialog("Name");
-            baseSalary = Double.parseDouble(JOptionPane.showInputDialog("Base salary"));
+            do {
+                baseSalary = Double.parseDouble(JOptionPane.showInputDialog("Base salary"));
+            }while (baseSalary > MAX_VALID_SALARY);
             startingTier =JOptionPane.showInputDialog("Tier (T, M, or S)");
-            numBasic = Integer.parseInt(JOptionPane.showInputDialog("Number of basic laptops sold"));
-            numPremium = Integer.parseInt(JOptionPane.showInputDialog("Number of premium laptops sold"));
-            namDeluxe = Integer.parseInt(JOptionPane.showInputDialog("Number of deluxe laptops sold"));
+            do {
+                numBasic = Integer.parseInt(JOptionPane.showInputDialog("Number of basic laptops sold"));
+            }while (numBasic > MAX_VALID_UNITS);
+            do {
+                numPremium = Integer.parseInt(JOptionPane.showInputDialog("Number of premium laptops sold"));
+            }while (numPremium > MAX_VALID_UNITS);
+            do {
+                numDeluxe = Integer.parseInt(JOptionPane.showInputDialog("Number of deluxe laptops sold"));
+            }while (numDeluxe > MAX_VALID_UNITS);
 
             //Convert starting tier from single letter string to word
             switch (startingTier){
@@ -62,10 +74,10 @@ public class PopsLaptopShop {
             }
 
             //Calculations
-            salesTotal = (numBasic * basic) + (numPremium * premium) + (namDeluxe * deluxe);
+            salesTotal = (numBasic * basic) + (numPremium * premium) + (numDeluxe * deluxe);
 
             //Calculate commission amount
-            commTotal = (numBasic * basicComm) + (numPremium * premiumComm) + (namDeluxe * deluxeComm);
+            commTotal = (numBasic * basicComm) + (numPremium * premiumComm) + (numDeluxe * deluxeComm);
 
             //Calculate Bonus Amount
             if ((salesTotal >= 0) && (salesTotal <2500)){

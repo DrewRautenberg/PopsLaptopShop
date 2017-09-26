@@ -27,13 +27,15 @@ public class PopsLaptopShop {
 
             //calculation variables
             double salesTotal;
-            int commTotal;
+            double commTotal;
             double bonusAmt;
+            String finalTier;
+            double baseSalaryLimit;
 
             //user input
             name = JOptionPane.showInputDialog("Name");
-            baseSalary = Integer.parseInt(JOptionPane.showInputDialog("Base salary"));
-            startingTier = JOptionPane.showInputDialog("Tier");
+            baseSalary = Double.parseDouble(JOptionPane.showInputDialog("Base salary"));
+            startingTier = JOptionPane.showInputDialog("Tier (T, M, or S)");
             numBasic = Integer.parseInt(JOptionPane.showInputDialog("Number of basic laptops sold"));
             numPremium = Integer.parseInt(JOptionPane.showInputDialog("Number of premium laptops sold"));
             namDeluxe = Integer.parseInt(JOptionPane.showInputDialog("Number of deluxe laptops sold"));
@@ -61,11 +63,17 @@ public class PopsLaptopShop {
                 bonusAmt = 375;
             }
 
+            baseSalaryLimit = baseSalary *.75;
+
+            if (commTotal >= baseSalaryLimit){
+
+            }
+
             System.out.println("Salesperson: " + name);
             System.out.println("Starting Tier: " + startingTier);
-            System.out.printf("Base Salary: $%.2f" + baseSalary);
-            System.out.printf("Commission: $%.2f" + commTotal);
-            System.out.printf("Bonus: $%.2f" + bonusAmt);
+            System.out.printf("Base Salary: $%,.2f\n", baseSalary);
+            System.out.printf("Commission: $%,.2f\n", commTotal);
+            System.out.printf("Bonus: $%,.2f\n", bonusAmt);
 
         }
 }

@@ -31,7 +31,7 @@ public class PopsLaptopShop {
             double bonusAmt;
             String finalTier;
             double baseSalaryLimit;
-            int superBonus = 0;
+            double superBonus = 0;
             String startingTierWord;
 
             //user input
@@ -109,8 +109,8 @@ public class PopsLaptopShop {
             System.out.printf("Base Salary: $%,.2f\n", baseSalary);
             System.out.printf("Commission: $%,.2f\n", commTotal);
             System.out.printf("Bonus: $%,.2f\n", bonusAmt);
-            System.out.printf("Super Bonus: $%,.2d\n", superBonus);
-            System.out.println("Final Tier:" + finalTier);
+            System.out.printf("Super Bonus: $%,.2f\n", superBonus);
+            System.out.println("Final Tier: " + finalTier);
 
         }
 }

@@ -35,6 +35,7 @@ public class PopsLaptopShop {
             String startingTierWord;
             double totCommBonus;
             double totMonthPay;
+            String bonusMessage = "";
 
             //user input
             name = JOptionPane.showInputDialog("Name");
@@ -91,13 +92,16 @@ public class PopsLaptopShop {
                 switch (startingTier){
                     case "S":
                         finalTier = "Middle";
+                        bonusMessage = "Congratulations, " + name + ", you got promoted to the Middle tier.";
                         break;
                     case "M":
                         finalTier = "Top";
+                        bonusMessage = "Congratulations, " + name + ", you got promoted to the Top tier.";
                         break;
                     case "T":
                         finalTier = "Top";
                         superBonus = SUPER_BONUS;
+                        bonusMessage = "Congratulations, " + name + ", you got the Super Bonus because you were already in the top tier.";
                         break;
                     default:
                         finalTier = startingTierWord;
@@ -106,6 +110,7 @@ public class PopsLaptopShop {
             }
             else{
                 finalTier = startingTierWord;
+                bonusMessage = "Sorry, " + name + ", you didn't get promoted this month.";
             }
 
             //Calculate total commission and bonus
@@ -124,6 +129,7 @@ public class PopsLaptopShop {
             System.out.printf("Total Commission and Bonus: $%,.2f\n", totCommBonus);
             System.out.printf("Total Monthly Pay: $%,.2f\n", totMonthPay);
             System.out.println("Final Tier: " + finalTier);
+            System.out.println(bonusMessage);
 
         }
 }

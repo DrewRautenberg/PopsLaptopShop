@@ -31,14 +31,29 @@ public class PopsLaptopShop {
             double bonusAmt;
             String finalTier;
             double baseSalaryLimit;
+            int superBonus = 0;
+            String startingTierWord;
 
             //user input
             name = JOptionPane.showInputDialog("Name");
             baseSalary = Double.parseDouble(JOptionPane.showInputDialog("Base salary"));
-            startingTier = JOptionPane.showInputDialog("Tier (T, M, or S)");
+            startingTier =JOptionPane.showInputDialog("Tier (T, M, or S)");
             numBasic = Integer.parseInt(JOptionPane.showInputDialog("Number of basic laptops sold"));
             numPremium = Integer.parseInt(JOptionPane.showInputDialog("Number of premium laptops sold"));
             namDeluxe = Integer.parseInt(JOptionPane.showInputDialog("Number of deluxe laptops sold"));
+
+            //Convert starting tier from char to word
+            switch (startingTier){
+                case "S":
+                    startingTierWord = "Starting";
+                    break;
+                case "M":
+                    startingTierWord = "Middle";
+                    break;
+                case "T":
+                    startingTierWord = "Top";
+                    break;
+            }
 
             //Calculations
             salesTotal = (numBasic * basic) + (numPremium * premium) + (namDeluxe * deluxe);
@@ -66,14 +81,29 @@ public class PopsLaptopShop {
             baseSalaryLimit = baseSalary *.75;
 
             if (commTotal >= baseSalaryLimit){
-
+                switch (startingTier){
+                    case "S":
+                        finalTier = "Middle";
+                        break;
+                    case "M":
+                        finalTier = "Top";
+                        break;
+                    case "T":
+                        finalTier = "Top";
+                        superBonus = SUPER_BONUS;
+                        break;
+                }
+            }
+            else{
+                finalTier = startingTierWord;
             }
 
             System.out.println("Salesperson: " + name);
-            System.out.println("Starting Tier: " + startingTier);
+            System.out.println("Starting Tier: " + startingTierWord);
             System.out.printf("Base Salary: $%,.2f\n", baseSalary);
             System.out.printf("Commission: $%,.2f\n", commTotal);
             System.out.printf("Bonus: $%,.2f\n", bonusAmt);
+            System.out.printf("Super Bonus: $%,.2d\n", superBonus);
 
         }
 }

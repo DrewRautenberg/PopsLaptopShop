@@ -45,7 +45,7 @@ public class PopsLaptopShop {
             numPremium = Integer.parseInt(JOptionPane.showInputDialog("Number of premium laptops sold"));
             namDeluxe = Integer.parseInt(JOptionPane.showInputDialog("Number of deluxe laptops sold"));
 
-            //Convert starting tier from char to word
+            //Convert starting tier from single letter string to word
             switch (startingTier){
                 case "S":
                     startingTierWord = "Starting";
@@ -101,7 +101,8 @@ public class PopsLaptopShop {
                     case "T":
                         finalTier = "Top";
                         superBonus = SUPER_BONUS;
-                        bonusMessage = "Congratulations, " + name + ", you got the Super Bonus because you were already in the top tier.";
+                        bonusMessage = "Congratulations, " + name + ", you got the Super Bonus because you were " +
+                                "already in the top tier.";
                         break;
                     default:
                         finalTier = startingTierWord;

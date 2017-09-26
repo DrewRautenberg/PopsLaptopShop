@@ -73,7 +73,7 @@ public class PopsLaptopShop {
                     break;
             }
 
-            //Calculations
+            //Calculate sales total
             salesTotal = (numBasic * basic) + (numPremium * premium) + (numDeluxe * deluxe);
 
             //Calculate commission amount

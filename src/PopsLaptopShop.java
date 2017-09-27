@@ -149,7 +149,7 @@ public class PopsLaptopShop {
 
                 //prompt user if they would like to run again
                 repeatInput = JOptionPane.showInputDialog("Would you like to enter another sales person?");
-                if (repeatInput.equalsIgnoreCase("yes") ){
+                if (repeatInput.equalsIgnoreCase("yes") || repeatInput.equalsIgnoreCase("y")){
                     repeat = true;
                 }
 

@@ -152,7 +152,6 @@ public class PopsLaptopShop {
                 if (repeatInput.equalsIgnoreCase("yes") || repeatInput.equalsIgnoreCase("y")){
                     repeat = true;
                 }
-
             }while (repeat);
         }
 }

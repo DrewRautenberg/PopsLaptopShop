@@ -30,6 +30,7 @@ public class PopsLaptopShop {
             int numDeluxe;
 
             //calculation variables
+            String startingTierCaps;
             double salesTotal;
             double commTotal;
             double bonusAmt;
@@ -62,7 +63,8 @@ public class PopsLaptopShop {
                 } while (numDeluxe > MAX_VALID_UNITS);
 
                 //Convert starting tier from single letter string to word
-                switch (startingTier) {
+                startingTierCaps = startingTier.toUpperCase();
+                switch (startingTierCaps) {
                     case "S":
                         startingTierWord = "Starting";
                         break;
@@ -74,6 +76,8 @@ public class PopsLaptopShop {
                         break;
                     default:
                         startingTierWord = "Starting";
+                        System.out.println("A valid selection was not made for starting tier, " +
+                                "lowest tier Starting is assumed.");
                         break;
                 }
 
@@ -145,7 +149,7 @@ public class PopsLaptopShop {
 
                 //prompt user if they would like to run again
                 repeatInput = JOptionPane.showInputDialog("Would you like to enter another sales person?");
-                if (repeatInput.equalsIgnoreCase("yes")){
+                if (repeatInput.equalsIgnoreCase("yes") ){
                     repeat = true;
                 }
 
